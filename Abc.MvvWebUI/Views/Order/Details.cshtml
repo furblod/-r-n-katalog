@@ -1,0 +1,91 @@
+﻿@using Abc.MvvWebUI.Entity
+@model Abc.MvvWebUI.Models.OrderDetailsModel
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h2>Sipariş Detay Bilgileri</h2>
+            <hr />
+            <dl class="row">
+
+                <dt class="col-sm-3">Username</dt>
+                <dd class="col-sm-9">@Model.UserName</dd>
+
+                <dt class="col-sm-3">Order State</dt>
+                <dd class="col-sm-9">
+
+                    @using (Html.BeginForm("UpdateOrderState", "Order", FormMethod.Post))
+                    {
+                        @Html.HiddenFor(i => i.OrderId)
+
+                        <dl class="row">
+                            <dt class="col-sm-8">
+                                @Html.EnumDropDownListFor(i => i.OrderState, "Select Order State", new { @class = "form-control" })
+                            </dt>
+                            <dd class="col-sm-4">
+                                <button type="submit" class="btn btn-primary ">Update</button>
+                            </dd>
+                        </dl>
+                    }
+                </dd>
+
+                <dt class="col-sm-3">Order ID</dt>
+                <dd class="col-sm-9">@Model.OrderId</dd>
+
+                <dt class="col-sm-3">Order Number</dt>
+                <dd class="col-sm-9">@Model.OrderNumber</dd>
+
+                <dt class="col-sm-3">Total</dt>
+                <dd class="col-sm-9">@Model.Total ₺</dd>
+
+                <dt class="col-sm-3">Order Date</dt>
+                <dd class="col-sm-9">@Model.OrderDate</dd>
+
+                <dt class="col-sm-3">Adres</dt>
+                <dd class="col-sm-9">
+                    @Model.AdresBasligi
+                    <hr />
+                    @Model.Adres
+                    <br />
+                    @Model.Sehir -  @Model.Semt -  @Model.Mahalle
+                    <br />
+                    @Model.PostaKodu
+                </dd>
+                <dt class="col-sm-3">Products</dt>
+                <dd class="col-sm-9">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Image</th>
+                                <th>Product Name</th>
+                                <th>Quantity</th>
+                                <th>Price</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.OrderLines)
+                            {
+                                <tr>
+                                    <td>
+                                        <img src="~/Upload/@item.Image" width="70" />
+                                    </td>
+                                    <td>@item.ProductName</td>
+                                    <td>@item.Quantity</td>
+                                    <td>@item.Price ₺</td>
+                                    <td><a href="/home/details/@item.ProductId" class="btn btn-info" target="_blank">Product Details</a></td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </dd>
+            </dl>
+        </div>
+    </div>
+</div>
+
+

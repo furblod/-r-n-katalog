@@ -1,0 +1,28 @@
+﻿@using Abc.MvvWebUI.Models;
+@model IEnumerable<ProductModel>
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+
+<div class="row">
+    @foreach (var urun in Model)
+    {
+        <div class="col-md-4 mb-2">
+            <div class="card">
+                <img class="card-img-top" src="/Upload/@urun.Image" alt="@urun.Name">
+                <div class="card-body">
+                    <h5 class="card-title"> <a href="/Home/Details/@urun.Id"> @urun.Name</a></h5>
+                    <p class="card-text pt-2 description">@urun.Description</p>
+
+
+                </div>
+                <p class="card-footer">
+                    <small class="text-muted">
+                        @urun.Price ₺
+                    </small>
+                    <a href="/Home/Details/@urun.Id" class="btn btn-primary btn-sm float-right"><i class="fa fa-angle-double-right " aria-hidden="true"></i> Ürünü İncele</a>
+                </p>
+            </div>
+        </div>
+    }
+</div>

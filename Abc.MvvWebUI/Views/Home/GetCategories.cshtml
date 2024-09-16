@@ -1,0 +1,29 @@
+﻿@model IEnumerable<Abc.MvvWebUI.Entity.Category>
+@{ 
+    var selectedCategory = Url.RequestContext.RouteData.Values["id"];
+}
+<ul class="list-group">
+        <a href="/Home/List" class="list-group-item">
+            Tüm Kategoriler
+        </a>
+
+    @foreach (var item in Model)
+    {
+        if (selectedCategory != null)
+        {
+            if (item.Id == int.Parse(selectedCategory.ToString()))
+            {
+                <a href="/Home/List/@item.Id" class="list-group-item active">@item.Name</a>
+            }
+            else
+            {
+               <a href="/Home/List/@item.Id" class="list-group-item">@item.Name</a>
+
+            }
+        }
+        else
+        {
+            <a href="/Home/List/@item.Id" class="list-group-item">@item.Name</a>
+        }       
+    }
+</ul>

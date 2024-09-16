@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.35026.282
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Abc.MvvWebUI", "Abc.MvvWebUI\Abc.MvvWebUI.csproj", "{CAFADEF5-903A-4985-AFED-C4C44008FC1D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CAFADEF5-903A-4985-AFED-C4C44008FC1D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CAFADEF5-903A-4985-AFED-C4C44008FC1D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CAFADEF5-903A-4985-AFED-C4C44008FC1D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CAFADEF5-903A-4985-AFED-C4C44008FC1D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CCB3E4F9-0ECF-46EF-AD12-ED76CD69CC98}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,12 @@
+﻿@using Abc.MvvWebUI.Models
+@model Abc.MvvWebUI.Models.Cart
+
+<ul class="navbar-nav my-2 mb-lg-0"> 
+        <li class="nav-item"style="color:white">
+            <a href="/cart" class="nav-link">
+                <i class="fa fa-cart-plus" aria-hidden="true"></i>
+                (@Model.CartLines.Count)
+            </a>
+        </li>        
+</ul>
+
